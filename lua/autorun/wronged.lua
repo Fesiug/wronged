@@ -98,7 +98,7 @@ hook.Add( "HUDPaint", "WRONGED_HUDPaint", function()
 	local w, h = cui( 86 ), cui( 62 )
 	
 	local num = 0
-	for i, v in pairs( wronged ) do
+	for i, v in SortedPairsByMemberValue( wronged, "time", true ) do
 		if v.time <= CurTime()-(cv_wronged_time:GetFloat()) then wronged[i] = nil continue end
 
 		local x, y = 0, 0
