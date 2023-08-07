@@ -213,7 +213,7 @@ else
 
 	hook.Add( "PostEntityTakeDamage", "WRONGED_PostEntityTakeDamage", function( target, dmginfo )
 		local att = dmginfo:GetAttacker()
-		if cv_wronged_sv:GetBool() and ( target:IsPlayer() and IsValid( att ) ) then
+		if cv_wronged_sv:GetBool() and ( target:IsPlayer() and IsValid( att ) and att:IsPlayer() ) then
 			net.Start("WRONGED")
 				net.WriteEntity( target )
 				net.WriteFloat( dmginfo:GetDamage() )
