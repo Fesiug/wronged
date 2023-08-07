@@ -34,6 +34,7 @@ surface.CreateFont("WRONGED_3", {
 	antialias = false,
 })
 end
+genfonts()
 
 cvars.AddChangeCallback("wronged_scale", function(convar_name, value_old, value_new)
     genfonts()
